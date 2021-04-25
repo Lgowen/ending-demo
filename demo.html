@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      @keyframes cloudFly1 {
+        0% {
+          -webkit-transform: translateX(75vw);
+          transform: translateX(75vw);
+        }
+        33.3% {
+          -webkit-transform: translateX(-58vw);
+          transform: translateX(-58vw);
+        }
+        100% {
+          -webkit-transform: translateX(-65vw);
+          transform: translateX(-65vw);
+        }
+      }
+      @keyframes cloudFly2 {
+        0% {
+          -webkit-transform: translateX(75vw);
+          transform: translateX(75vw);
+        }
+        66.6% {
+          -webkit-transform: translateX(-58vw);
+          transform: translateX(-58vw);
+        }
+        100% {
+          -webkit-transform: translateX(-65vw);
+          transform: translateX(-65vw);
+        }
+      }
+      @keyframes cloudFly3 {
+        0% {
+          -webkit-transform: translateX(75vw);
+          transform: translateX(75vw);
+        }
+        55.5% {
+          -webkit-transform: translateX(75vw);
+          transform: translateX(75vw);
+        }
+        100% {
+          -webkit-transform: translateX(-65vw);
+          transform: translateX(-65vw);
+        }
+      }
+      @keyframes swiper1 {
+        0% {
+          transform: translate(0%, 200%) rotate(-90deg);
+          opacity: 0;
+        }
+        100% {
+          transform: translate(0%, 0%) rotate(0);
+          opacity: 1;
+        }
+      }
+      @keyframes tingle {
+        0% {
+          transform: rotate(0);
+        }
+        12.5% {
+          transform: rotate(-20deg);
+        }
+        25% {
+          transform: rotate(20deg);
+        }
+        37.5% {
+          transform: rotate(-20deg);
+        }
+        50% {
+          transform: rotate(0);
+        }
+        100% {
+          transform: rotate(0);
+        }
+      }
+      @keyframes trans {
+        0% {
+          opacity: 0;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(5);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(5);
+        }
+      }
+      img {
+        display: block;
+      }
+      .container {
+        width: 100vw;
+        height: 100vh;
+        /* position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto; */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        background-size: cover;
+        background-position: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        /* justify-content: center; */
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        background-image: url("./ending3/p_bg.jpg");
+        background-size: cover;
+      }
+      .header {
+        width: 45vw;
+        /* height: 20vh; */
+        position: relative;
+        margin-top: 3vh;
+      }
+      .header .logo {
+        width: 100%;
+        position: relative;
+        z-index: 3;
+      }
+      .header .cloud {
+        width: 30vw;
+        position: absolute;
+        transform: translateX(75vw);
+      }
+      .header .cloud.cloud1 {
+        top: 30%;
+        animation: cloudFly1 10s linear infinite;
+      }
+      .header .cloud.cloud2 {
+        top: 87%;
+        animation: cloudFly2 10s linear infinite;
+      }
+      .header .cloud.cloud3 {
+        top: 150%;
+        animation: cloudFly3 10s linear infinite;
+      }
+      .header .text {
+        width: 75vw;
+        position: absolute;
+        left: 50%;
+        bottom: -50%;
+        transform: translate(-50%);
+      }
+      .swiper {
+        display: flex;
+        width: 55vw;
+        /* height: 30vh; */
+        flex-wrap: wrap;
+        margin-top: 15vh;
+      }
+      .swiper .swiper-container {
+        width: 50%;
+        height: 50%;
+        transform: translate(0%, 200%) rotate(-90deg);
+        opacity: 0;
+        position: relative;
+        /* left: 0; */
+        /* top: 100%; */
+        /* animation: tingle 1.5s linear infinite; */
+      }
+      .swiper .swiper-container::after {
+        width: 20%;
+        height: 20%;
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -5%;
+        right: 10%;
+        background-image: url("./ending3/e_lock01.png");
+        background-size: cover;
+        animation: trans 2s linear;
+        animation-fill-mode: forwards;
+      }
+      .swiper .swiper-container .swiper-item {
+        width: 100%;
+        height: 100%;
+        display: block;
+        /* transform: translate(0%, 200%) rotate(-90deg); */
+        /* opacity: 0; */
+        /* animation: tingle 1.5s linear infinite; */
+      }
+      .swiper .swiper-container1 {
+        animation: swiper1 1s ease forwards;
+      }
+      .swiper .swiper-container2 {
+        animation: swiper1 1s ease 0.5s forwards;
+      }
+      .swiper .swiper-container3 {
+        animation: swiper1 1s ease 1s forwards;
+      }
+      .swiper .swiper-container4 {
+        animation: swiper1 1s ease 1.5s forwards;
+      }
+      .button {
+        width: 40vw;
+        /* position: relative; */
+        bottom: 30vh;
+        display: flex;
+        margin-top: 15vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .button .more {
+        width: 40vw;
+      }
+      .button .again {
+        width: 30vw;
+      }
+      @media only screen and (orientation: landscape) {
+        .container .header {
+          width: 20vw;
+          margin-top: 5vh;
+        }
+        .container .header .cloud {
+          width: 15vw;
+        }
+        .container .header .text {
+          width: 30vw;
+        }
+        .container .swiper {
+          margin-top: 15vh;
+          width: 80vw;
+          flex-wrap: nowrap;
+        }
+        .container .swiper .swiper-container {
+          width: 100%;
+          height: 100%;
+        }
+        .container .button {
+          margin-top: 10vh;
+          position: relative;
+          left: 6%;
+          top: 0;
+          flex-direction: row;
+        }
+        .container .button .more {
+          width: 17vw;
+        }
+        .container .button .again {
+          position: relative;
+          top: 16%;
+          left: 3%;
+          width: 11vw;
+        }
+      }
+
+      @media only screen and (min-width: 540px) and (orientation: portrait) {
+        .container .swiper {
+          margin-top: 12vh;
+        }
+        .container .button {
+          margin-top: 5vh;
+        }
+      }
+
+      @media only screen and (min-width: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
+        .container .swiper {
+          width: 50vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <img class="logo" src="./ending3/b_logo.png" />
+        <img class="cloud cloud1" src="./ending3/p_yun.png" />
+        <img class="cloud cloud2" src="./ending3/p_yun.png" />
+        <img class="cloud cloud3" src="./ending3/p_yun.png" />
+        <img class="text" src="./ending3/e_text.png" />
+      </div>
+      <div class="swiper">
+        <div class="swiper-container swiper-container1">
+          <img class="swiper-item swiper-item1" src="./ending3/e_01.png" />
+        </div>
+        <div class="swiper-container swiper-container2">
+          <img class="swiper-item swiper-item2" src="./ending3/e_02.png" />
+        </div>
+        <div class="swiper-container swiper-container3">
+          <img class="swiper-item swiper-item3" src="./ending3/e_03.png" />
+        </div>
+        <div class="swiper-container swiper-container4">
+          <img class="swiper-item swiper-item4" src="./ending3/e_04.png" />
+        </div>
+      </div>
+      <div class="button">
+        <img class="more" src="./ending3/b_btn01.png" />
+        <img class="again" src="./ending3/b_playagain.png" />
+      </div>
+    </div>
+  </body>
+  <script>
+    function createAnimation(animationName, attr, value) {}
+
+    function removeAnimation() {}
+
+    /**
+     * 给元素添加动画
+     * @param {string} el DOM元素
+     * @param {Object} animationInfo 动画配置(具体参考动画属性)
+     */
+    function addAnimation(el, animationInfo) {
+      const {
+        animationName,
+        animationDuration,
+        animationTimingFunction,
+        animationDelay,
+        animationIterationCount,
+        animationDirection,
+        animationFillMode,
+        animationPlayState,
+      } = animationInfo;
+      el.style.opacity = 1;
+      const animationMode = `${animationName} ${animationDuration} ${animationTimingFunction} ${animationDelay} ${animationIterationCount} ${animationDirection} ${animationFillMode} ${animationPlayState}`.replaceAll(
+        "undefined",
+        ""
+      );
+      el.style.animation = animationMode;
+    }
+
+    /**
+     * 获取DOM元素
+     * @param {string} className DOM元素类名
+     */
+    function getElement(className) {
+      return document.querySelector(`.${className}`);
+    }
+
+    /**
+     * 创建style标签
+     * @param {string} style css样式表
+     */
+    function cssEngine(style) {
+      let css = document.createElement("style"); // Creates <style></style>
+      css.className = "create-style";
+      if (css.styleSheet) css.styleSheet.cssText = style;
+      // Support for IE
+      else css.appendChild(document.createTextNode(style)); // Support for the rest
+      document.getElementsByTagName("head")[0].appendChild(css); // Specifies where to place the css
+    }
+
+    /**
+     * 监听DOM元素动画结束
+     * @param {Object} el DOM元素
+     * @param {Function} callback 动画结束回调函数
+     */
+    function monitorAnimationEnd(el, callback) {
+      el.addEventListener("animationend", function () {
+        callback(...arguments);
+      });
+    }
+
+    function openEndPage() {
+      const lastSwiper = getElement("swiper-container4");
+      const [...swiper] = document.querySelectorAll(".swiper-container");
+      console.log(swiper);
+      const animationInfo = {
+        animationName: "tingle",
+        animationDuration: "1.5s",
+        animationTimingFunction: "linear",
+        animationIterationCount: "infinite",
+      };
+
+      monitorAnimationEnd(lastSwiper, function () {
+        console.log("动画结束了");
+        swiper.forEach((item) => addAnimation(item, animationInfo));
+      });
+    }
+
+
+    openEndPage()
+  </script>
+</html>
